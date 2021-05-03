@@ -5,6 +5,7 @@
 ## <함수소개>
 ### void SelectMenu(); //메뉴를 선택하는 함수
 ### int GetPoint(); //글 한개 작성 시 포인트를 지급
+### int ManagePoint(); //포인트를 관라히는 함수
 ### int DeletePost(); //글을 삭제하는 함수
 ### int CreatPost(); //글을 추가하는 함수
 ### void listPost(); //등록된 글 목록 출력
