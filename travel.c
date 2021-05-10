@@ -51,7 +51,7 @@ int CreatPost(data *d){
     printf("여행한 날짜는? ");
     scanf("%s" , d->day);
     printf("이용한 교통수단은? ");
-    scanf("%d" , d->trans);
+    scanf("%" , d->trans);
     printf("별점개수는? ");
     scanf("%d" , &d->num);
     printf("추가로 기록할 내용을 자유롭게 기록해주세요.");
