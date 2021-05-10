@@ -1,15 +1,7 @@
-#include <stdio.h>
 
-typedef struct {
-    char day[100];//여행한 날짜
-    int point;//포인트
-    int num;//별점
-    char trans[100];//교통수단
-    char place[100];//여행 장소
-    char diary[100];//기록할 내용
-}data;
+#include "travel.h"
 
-int selectMenu(){
+int SelectMenu(){
     int menu;
     printf("\n*** 메뉴 ***\n");
     printf("1. 새 글 등록\n");
@@ -59,7 +51,7 @@ int CreatPost(data *d){
     printf("여행한 날짜는? ");
     scanf("%s" , d->day);
     printf("이용한 교통수단은? ");
-    scanf("%d" , d->trans);
+    scanf("%" , d->trans);
     printf("별점개수는? ");
     scanf("%d" , &d->num);
     printf("추가로 기록할 내용을 자유롭게 기록해주세요.");
@@ -67,3 +59,25 @@ int CreatPost(data *d){
     printf("=>추가됨!");
     return 1;
 }
+
+
+int readPost(data d[]){
+    printf("%s\n",d->diary);
+}
+
+void listPost(data* d[],int count){
+    for(int i=0;i<count;i++){
+        readPost(d[i]);
+    }
+}
+
+void listDetail(data d[]){
+    printf("여행한 날자 %s\n",d->day);
+    printf("현재 포인트 %d\n",d->point);
+    printf("현재 별점%d\n",d->num);
+    printf("이용한 교통수단 %s",d->trans);
+}
+int UpdatePost(data* d){
+    CreatPost(d);
+}
+

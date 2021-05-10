@@ -3,9 +3,9 @@
 ## 설명: 여행을 하면서 기억하고 싶은 추억들을 기록하는 여행 일기장입니다. 날짜와 여행장소로 구분되어 세부적인 내용을 기록합니다.
 ##
 ## <함수소개>
-### void SelectMenu(); //메뉴를 선택하는 함수
+### int SelectMenu(); //메뉴를 선택하는 함수
 ### int GetPoint(); //글 한개 작성 시 포인트를 지급
-### int ManagePoint(); //포인트를 관라히는 함수
+### int ManagePoint(); //포인트를 관리하는 함수
 ### int DeletePost(); //글을 삭제하는 함수
 ### int CreatPost(); //글을 추가하는 함수
 ### void listPost(); //등록된 글 목록 출력
