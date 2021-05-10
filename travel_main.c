@@ -1,6 +1,5 @@
 #include "travel.h"
 
-
 int main(){
     int menu;
     int count=0;
