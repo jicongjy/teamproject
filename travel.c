@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
 typedef struct {
     char day[100];//여행한 날짜
@@ -69,21 +72,22 @@ int CreatPost(data *d){
 }
 
 
+int readPost(data d[]){
+    printf("%s\n",d->diary);
+}
+
 void listPost(data* d[],int count){
     for(int i=0;i<count;i++){
         readPost(d[i]);
     }
-};
+}
+
 void listDetail(data d[]){
     printf("여행한 날자 %s\n",d->day);
     printf("현재 포인트 %d\n",d->point);
     printf("현재 별점%d\n",d->num);
     printf("이용한 교통수단 %s",d->trans);
-};
-int readPost(data d[]){
-    printf("%s\n",d->diary);
 }
 int UpdatePost(data* d){
-CratePost(d);
-};
-
+    CreatPost(d);
+}
