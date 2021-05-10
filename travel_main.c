@@ -3,6 +3,7 @@
 int main(){
     int menu;
     int count=0;
+    int choose;
     data *d[100];
     //포인터에 공간 배정
     for(int i=0;i<100;i++){
@@ -21,11 +22,15 @@ int main(){
             listPost(d,count);
         }
         else if(menu==3){
-		DeletePost(d);
+            printf("삭제할 번호를 고르시오:\n");
+            scanf("%d",&choose);
+		DeletePost(d[choose-1]);
             //글 삭제
         }
         else if(menu==4){
-		UpdatePost(d);
+            printf("수정할 번호를 고르시오:\n");
+            scanf("%d",&choose);
+		UpdatePost(d[choose-1]);
             //글 수정
         }
         else if(menu==5){
@@ -35,7 +40,9 @@ int main(){
             // 검색
         }
         else if(menu==7){
-		Viewpoint(d);
+            printf("조회할 번호를 고르시오:\n");
+            scanf("%d",&choose);
+		Viewpoint(d[choose-1]);
             //포인트 조회
         }
     }
@@ -45,3 +52,4 @@ int main(){
     }
     return 0;
 }
+
