@@ -53,7 +53,7 @@ int CreatPost(data *d){
     scanf(" %[^\n]s" , d->day);
     printf("이용한 교통수단은? ");
     scanf(" %[^\n]s" , d->trans);
-    printf("별점개수는? ");
+    printf("별점개수는? (최고 별점은 5점입니다.)");
     scanf(" %d" , &d->num);
     printf("추가로 기록할 내용을 자유롭게 기록해주세요.(100자 이내로 작성해주세요!)");
     scanf(" %[^\n]s" , d->diary);
