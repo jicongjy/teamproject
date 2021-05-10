@@ -67,6 +67,7 @@ int readPost(data d[]){
 
 void listPost(data* d[],int count){
     for(int i=0;i<count;i++){
+        printf("%d: ",i+1);
         readPost(d[i]);
     }
 }
