@@ -1,15 +1,7 @@
 
 #include "travel.h"
-typedef struct {
-    char day[100];//여행한 날짜
-    int point;//포인트
-    int num;//별점
-    char trans[100];//교통수단
-    char place[100];//여행 장소
-    char diary[100];//기록할 내용
-}data;
 
-int selectMenu(){
+int SelectMenu(){
     int menu;
     printf("\n*** 메뉴 ***\n");
     printf("1. 새 글 등록\n");
@@ -88,3 +80,4 @@ void listDetail(data d[]){
 int UpdatePost(data* d){
     CreatPost(d);
 }
+
