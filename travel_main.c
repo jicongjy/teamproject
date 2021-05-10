@@ -45,6 +45,12 @@ int main(){
 		Viewpoint(d[choose-1]);
             //포인트 조회
         }
+	else if(menu==8){
+            printf("조회할 번호를 고르시오:\n");
+            scanf("%d",&choose);
+            listDetail(d[choose-1]);
+		//세부 정보 
+	}
     }
     //포인터에 배정된 공간 삭제
     for(int i=0;i<100;i++){
