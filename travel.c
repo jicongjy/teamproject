@@ -10,6 +10,7 @@ int SelectMenu(){
     printf("5. 파일저장\n");
     printf("6. 검색\n");
     printf("7. 포인트 조회\n");
+    printf("8. 세부정보 조회\n");
     printf("0. 종료\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
@@ -47,17 +48,16 @@ int DeletePost(data *d){
 int CreatPost(data *d){
     getchar();
     printf("여행지 명은? ");
-    scanf("%s" , d->place);
+    scanf(" %[^\n]s" , d->place);
     printf("여행한 날짜는? ");
-    scanf("%s" , d->day);
+    scanf(" %[^\n]s" , d->day);
     printf("이용한 교통수단은? ");
-    scanf("%s" , d->trans);
-    printf("별점개수는? ");
-    scanf("%d" , &d->num);
-    printf("추가로 기록할 내용을 자유롭게 기록해주세요.");
-    scanf("%s" , d->diary);
+    scanf(" %[^\n]s" , d->trans);
+    printf("별점개수는? (최고 별점은 5점입니다.)");
+    scanf(" %d" , &d->num);
+    printf("추가로 기록할 내용을 자유롭게 기록해주세요.(100자 이내로 작성해주세요!)");
+    scanf(" %[^\n]s" , d->diary);
     printf("=>추가됨!");
-    Getpoint(d, 1);
     return 1;
 }
 
@@ -68,11 +68,13 @@ int readPost(data d[]){
 
 void listPost(data* d[],int count){
     for(int i=0;i<count;i++){
+        printf("%d: ",i+1);
         readPost(d[i]);
     }
 }
 
 void listDetail(data d[]){
+    printf("여행한 장소 %s\n",d->place);
     printf("여행한 날짜 %s\n",d->day);
     printf("현재 포인트 %d\n",d->point);
     printf("현재 별점\n");
