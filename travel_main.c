@@ -21,9 +21,11 @@ int main(){
             listPost(d,count);
         }
         else if(menu==3){
+		DeletePost(d);
             //글 삭제
         }
         else if(menu==4){
+		UpdatePost(d);
             //글 수정
         }
         else if(menu==5){
@@ -33,6 +35,7 @@ int main(){
             // 검색
         }
         else if(menu==7){
+		Viewpoint(d);
             //포인트 조회
         }
     }

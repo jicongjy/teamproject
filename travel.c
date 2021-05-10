@@ -42,6 +42,7 @@ int DeletePost(data *d){
     d->diary[0] = '\0';
     printf("=> 삭제됨!\n");
     }
+    Getpoint(d, -1);
     return 1;
 }
 int CreatPost(data *d){
@@ -51,12 +52,13 @@ int CreatPost(data *d){
     printf("여행한 날짜는? ");
     scanf("%s" , d->day);
     printf("이용한 교통수단은? ");
-    scanf("%" , d->trans);
+    scanf("%s" , d->trans);
     printf("별점개수는? ");
     scanf("%d" , &d->num);
     printf("추가로 기록할 내용을 자유롭게 기록해주세요.");
     scanf("%s" , d->diary);
     printf("=>추가됨!");
+    Getpoint(d, 1);
     return 1;
 }
 
