@@ -1,4 +1,3 @@
-
 #include "travel.h"
 
 int SelectMenu(){
@@ -76,10 +75,14 @@ void listPost(data* d[],int count){
 void listDetail(data d[]){
     printf("여행한 날짜 %s\n",d->day);
     printf("현재 포인트 %d\n",d->point);
-    printf("현재 별점%d\n",d->num);
+    printf("현재 별점\n");
+    for(int i=0; i<d->num; i++)
+        printf("★");
+     for(int i=0; i<5-d->num; i++)
+        printf("☆");
+        printf("\n");
     printf("이용한 교통수단 %s",d->trans);
 }
 int UpdatePost(data* d){
     CreatPost(d);
 }
-
