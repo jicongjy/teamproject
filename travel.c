@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-
+#include "travel.h"
 typedef struct {
     char day[100];//여행한 날짜
     int point;//포인트
