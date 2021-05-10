@@ -73,6 +73,7 @@ void listPost(data* d[],int count){
 }
 
 void listDetail(data d[]){
+    printf("여행한 장소 %s\n",d->place);
     printf("여행한 날짜 %s\n",d->day);
     printf("현재 포인트 %d\n",d->point);
     printf("현재 별점\n");
