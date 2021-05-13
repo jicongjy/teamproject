@@ -68,7 +68,7 @@ int readPost(data d[]){
 
 void listPost(data* d[],int count){
     for(int i=0;i<count;i++){
-        printf("%d: ",i+1);
+        printf("%d) 여행날짜 %s \n기록내용: ",i+1,d[i]->day);
         readPost(d[i]);
     }
 }
