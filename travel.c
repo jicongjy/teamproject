@@ -2,17 +2,17 @@
 
 int SelectMenu(){
     int menu;
-    printf("\n*** ë©”ë‰´ ***\n");
-    printf("1. ìƒˆ ê¸€ ë“±ë¡\n");
-    printf("2. ë‚´ ê¸€ ì¡°íšŒ\n");
-    printf("3. ê¸€ ì‚­ì œ\n");
-    printf("4. ê¸€ ìˆ˜ì •\n");
-    printf("5. íŒŒì¼ì €ì¥\n");
-    printf("6. ê²€ìƒ‰\n");
-    printf("7. í¬ì¸íŠ¸ ì¡°íšŒ\n");
-    printf("8. ì„¸ë¶€ì •ë³´ ì¡°íšŒ\n");
-    printf("0. ì¢…ë£Œ\n\n");
-    printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
+    printf("\n*** ¸Ş´º ***\n");
+    printf("1. »õ ±Û µî·Ï\n");
+    printf("2. ³» ±Û Á¶È¸\n");
+    printf("3. ±Û »èÁ¦\n");
+    printf("4. ±Û ¼öÁ¤\n");
+    printf("5. ÆÄÀÏÀúÀå\n");
+    printf("6. °Ë»ö\n");
+    printf("7. Æ÷ÀÎÆ® Á¶È¸\n");
+    printf("8. ¼¼ºÎÁ¤º¸ Á¶È¸\n");
+    printf("0. Á¾·á\n\n");
+    printf("=> ¿øÇÏ´Â ¸Ş´º´Â? ");
     scanf("%d", &menu);
     return menu;
 }
@@ -26,12 +26,12 @@ int Getpoint(data *d, int po){
 }
 
 void Viewpoint(data *d){
-    printf("í˜„ì¬ %dí¬ì¸íŠ¸ê°€ ì ë¦½ë˜ì–´ ìˆìŠµë‹ˆë‹¤." , d->point);
+    printf("ÇöÀç %dÆ÷ÀÎÆ®°¡ Àû¸³µÇ¾î ÀÖ½À´Ï´Ù." , d->point);
 }
 
 int DeletePost(data *d){
     int no;
-    printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ:1)");
+    printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦:1)");
     scanf("%d" , &no);
     if(no==1){
     d->day[0] = '\0';
@@ -40,24 +40,24 @@ int DeletePost(data *d){
     d->trans[0] = '\0';
     d->place[0] = '\0';
     d->diary[0] = '\0';
-    printf("=> ì‚­ì œë¨!\n");
+    printf("=> »èÁ¦µÊ!\n");
     }
     Getpoint(d, -1);
     return 1;
 }
 int CreatPost(data *d){
     getchar();
-    printf("ì—¬í–‰ì§€ ëª…ì€? ");
+    printf("¿©ÇàÁö ¸íÀº? ");
     scanf(" %[^\n]s" , d->place);
-    printf("ì—¬í–‰í•œ ë‚ ì§œëŠ”? ");
+    printf("¿©ÇàÇÑ ³¯Â¥´Â? ");
     scanf(" %[^\n]s" , d->day);
-    printf("ì´ìš©í•œ êµí†µìˆ˜ë‹¨ì€? ");
+    printf("ÀÌ¿ëÇÑ ±³Åë¼ö´ÜÀº? ");
     scanf(" %[^\n]s" , d->trans);
-    printf("ë³„ì ê°œìˆ˜ëŠ”? (ìµœê³  ë³„ì ì€ 5ì ì…ë‹ˆë‹¤.)");
+    printf("º°Á¡°³¼ö´Â? (ÃÖ°í º°Á¡Àº 5Á¡ÀÔ´Ï´Ù.)");
     scanf(" %d" , &d->num);
-    printf("ì¶”ê°€ë¡œ ê¸°ë¡í•  ë‚´ìš©ì„ ììœ ë¡­ê²Œ ê¸°ë¡í•´ì£¼ì„¸ìš”.(100ì ì´ë‚´ë¡œ ì‘ì„±í•´ì£¼ì„¸ìš”!)");
+    printf("Ãß°¡·Î ±â·ÏÇÒ ³»¿ëÀ» ÀÚÀ¯·Ó°Ô ±â·ÏÇØÁÖ¼¼¿ä.(100ÀÚ ÀÌ³»·Î ÀÛ¼ºÇØÁÖ¼¼¿ä!)");
     scanf(" %[^\n]s" , d->diary);
-    printf("=>ì¶”ê°€ë¨!");
+    printf("=>Ãß°¡µÊ!");
     return 1;
 }
 
@@ -68,23 +68,42 @@ int readPost(data d[]){
 
 void listPost(data* d[],int count){
     for(int i=0;i<count;i++){
-        printf("%d) ì—¬í–‰ë‚ ì§œ %s \nê¸°ë¡ë‚´ìš©: ",i+1,d[i]->day);
+        printf("%d) ¿©Çà³¯Â¥ %s \n±â·Ï³»¿ë: ",i+1,d[i]->day);
         readPost(d[i]);
     }
 }
 
 void listDetail(data d[]){
-    printf("ì—¬í–‰í•œ ì¥ì†Œ %s\n",d->place);
-    printf("ì—¬í–‰í•œ ë‚ ì§œ %s\n",d->day);
-    printf("í˜„ì¬ í¬ì¸íŠ¸ %d\n",d->point);
-    printf("í˜„ì¬ ë³„ì \n");
+    printf("¿©ÇàÇÑ Àå¼Ò %s\n",d->place);
+    printf("¿©ÇàÇÑ ³¯Â¥ %s\n",d->day);
+    printf("ÇöÀç Æ÷ÀÎÆ® %d\n",d->point);
+    printf("ÇöÀç º°Á¡\n");
     for(int i=0; i<d->num; i++)
-        printf("â˜…");
+        printf("¡Ú");
      for(int i=0; i<5-d->num; i++)
-        printf("â˜†");
+        printf("¡Ù");
         printf("\n");
-    printf("ì´ìš©í•œ êµí†µìˆ˜ë‹¨ %s",d->trans);
+    printf("ÀÌ¿ëÇÑ ±³Åë¼ö´Ü %s",d->trans);
 }
 int UpdatePost(data* d){
     CreatPost(d);
+}
+
+void save(data *d[], int count)
+{
+ FILE *fp;
+ fp = fopen("diary.txt", "wt");
+
+ for(int i = 0; i < count; i++){
+ if(d[i]->day[0] == '\0') continue;
+
+ fprintf(fp, "%s ", d[i]->day);
+ fprintf(fp, "%d ",d[i]->point);
+ fprintf(fp, "%d ",d[i]->num);
+ fprintf(fp, "%s ",d[i]->trans);
+ fprintf(fp, "%s ",d[i]->place);
+ fprintf(fp, "%s \n",d[i]->diary);
+ }
+ fclose(fp);
+ printf("=> ÀúÀåµÊ! ");
 }
