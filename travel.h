@@ -20,4 +20,4 @@ void listDetail(data d[]); //세부사항 출력
 int readPost(data d[]); //하나의 글 출력 함수
 int UpdatePost(data* d); //정보 수정하는 함수
 void Viewpoint(data *d);//포인트를 확인하는 함수
-void save(data *d[], int count);//파일저장함수
+void saveData(data *d[], int count);//파일저장함수

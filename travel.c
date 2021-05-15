@@ -89,7 +89,7 @@ int UpdatePost(data* d){
     CreatPost(d);
 }
 
-void save(data *d[], int count)
+void saveData(data *d[], int count)
 {
  FILE *fp;
  fp = fopen("diary.txt", "wt");

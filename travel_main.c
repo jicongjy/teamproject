@@ -34,7 +34,7 @@ int main(){
             //글 수정
         }
         else if(menu==5){
-            save(d, count);
+            saveData(d, count);
             //파일 저장
         }
         else if(menu==6){
