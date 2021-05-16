@@ -5,7 +5,8 @@ int main(){
     int count=0;
     int choose;
     data *d[100];
-    //Æ÷ÀÎÅÍ¿¡ °ø°£ ¹èÁ¤
+    count=loadData(d);
+    //í¬ì¸í„°ì— ê³µê°„ ë°°ì •
     for(int i=0;i<100;i++){
         d[i]=malloc(sizeof(data));
     }
@@ -14,46 +15,47 @@ int main(){
         menu=SelectMenu();
 
         if(menu==1){
-            //»õ±Û µî·Ï
+            //ìƒˆê¸€ ë“±ë¡
             count+=CreatPost(d[count]);
         }
         else if(menu==2){
-            //±Û Á¶È¸
+            //ê¸€ ì¡°íšŒ
             listPost(d,count);
         }
         else if(menu==3){
-            printf("»èÁ¦ÇÒ ¹øÈ£¸¦ °í¸£½Ã¿À:\n");
+            printf("ì‚­ì œí•  ë²ˆí˜¸ë¥¼ ê³ ë¥´ì‹œì˜¤:\n");
             scanf("%d",&choose);
 		DeletePost(d[choose-1]);
-            //±Û »èÁ¦
+            //ê¸€ ì‚­ì œ
         }
         else if(menu==4){
-            printf("¼öÁ¤ÇÒ ¹øÈ£¸¦ °í¸£½Ã¿À:\n");
+            printf("ìˆ˜ì •í•  ë²ˆí˜¸ë¥¼ ê³ ë¥´ì‹œì˜¤:\n");
             scanf("%d",&choose);
 		UpdatePost(d[choose-1]);
-            //±Û ¼öÁ¤
+            //ê¸€ ìˆ˜ì •
         }
         else if(menu==5){
             saveData(d, count);
-            //ÆÄÀÏ ÀúÀå
+            //íŒŒì¼ ì €ì¥
         }
         else if(menu==6){
-            // °Ë»ö
+            searchName(d, count);
+            // ê²€ìƒ‰
         }
         else if(menu==7){
-            printf("Á¶È¸ÇÒ ¹øÈ£¸¦ °í¸£½Ã¿À:\n");
+            printf("ì¡°íšŒí•  ë²ˆí˜¸ë¥¼ ê³ ë¥´ì‹œì˜¤:\n");
             scanf("%d",&choose);
 		Viewpoint(d[choose-1]);
-            //Æ÷ÀÎÆ® Á¶È¸
+            //í¬ì¸íŠ¸ ì¡°íšŒ
         }
 	else if(menu==8){
-            printf("Á¶È¸ÇÒ ¹øÈ£¸¦ °í¸£½Ã¿À:\n");
+            printf("ì¡°íšŒí•  ë²ˆí˜¸ë¥¼ ê³ ë¥´ì‹œì˜¤:\n");
             scanf("%d",&choose);
             listDetail(d[choose-1]);
-		//¼¼ºÎ Á¤º¸ 
+		//ì„¸ë¶€ ì •ë³´ 
 	}
     }
-    //Æ÷ÀÎÅÍ¿¡ ¹èÁ¤µÈ °ø°£ »èÁ¦
+    //í¬ì¸í„°ì— ë°°ì •ëœ ê³µê°„ ì‚­ì œ
     for(int i=0;i<100;i++){
         free(d[i]);
     }
