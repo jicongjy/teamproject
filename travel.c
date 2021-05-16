@@ -58,6 +58,7 @@ int CreatPost(data *d){
     printf("추가로 기록할 내용을 자유롭게 기록해주세요.(100자 이내로 작성해주세요!)");
     scanf(" %[^\n]s" , d->diary);
     printf("=>추가됨!");
+    d->point=0;
     return 1;
 }
 
