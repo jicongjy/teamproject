@@ -89,17 +89,17 @@ int UpdatePost(data* d){
     CreatPost(d);
 }
 
-void searchName(data *p, int count){
+void searchName(data **p, int count){
     int scnt = 0;
     char search[20];
     int sea=0;
     printf("여행 장소를 입력하세요");
     scanf("%s" , search);
     printf("================================\n");
-        for(int i =0; i <count ; i++){ if(p[i].point == -1) continue;
-            if(strstr(p[i].place, search)){
+        for(int i =0; i <count ; i++){ if(p[i]->point == -1) continue;
+            if(strstr(p[i]->place, search)){
                  printf("%2d ", i+1);
-                 printf("%d) 여행날짜 %s \n기록내용: ",i+1,p[i].day);
+                 printf("%d) 여행날짜 %s \n기록내용: ",i+1, p[i]->day);
                  readPost(p);
                  listDetail(p);
                  scnt++;
@@ -129,7 +129,7 @@ void saveData(data *d[], int count)
  printf("=> 저장됨! ");
 }
 
-int loadData(data *p){
+int loadData(data **p){
     int i = 0;
     FILE *fp;
     fp = fopen("product.txt", "rt");
@@ -138,12 +138,12 @@ int loadData(data *p){
     else{
     for(; i < 100; i++){
          if(feof(fp)) break;
-                 fscanf(fp, "%s", &p[i].day);
-                 fscanf(fp, "%d", &p[i].point);
-                 fscanf(fp, "%d", &p[i].num);
-                 fscanf(fp, "%s", &p[i].trans);
-                 fscanf(fp, "%s", &p[i].place);
-                 fscanf(fp, "%s", &p[i].diary);
+                 fscanf(fp, "%s", &p[i]->day);
+                 fscanf(fp, "%d", &p[i]->point);
+                 fscanf(fp, "%d", &p[i]->num);
+                 fscanf(fp, "%s", &p[i]->trans);
+                 fscanf(fp, "%s", &p[i]->place);
+                 fscanf(fp, "%s", &p[i]->diary);
                 }
     fclose(fp);
     printf("=> 로딩 성공!\n");
