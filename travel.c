@@ -130,21 +130,21 @@ void saveData(data *d[], int count)
  printf("=> 저장됨! ");
 }
 
-int loadData(data **p){
+int loadData(data* p[]){
     int i = 0;
     FILE *fp;
-    fp = fopen("product.txt", "rt");
+    fp = fopen("diary.txt", "rt");
     if(fp == NULL)
          printf("=>파일 없음\n");
     else{
     for(; i < 100; i++){
          if(feof(fp)) break;
-                 fscanf(fp, "%s", &p[i]->day);
+                 fscanf(fp, "%s", p[i]->day);
                  fscanf(fp, "%d", &p[i]->point);
                  fscanf(fp, "%d", &p[i]->num);
-                 fscanf(fp, "%s", &p[i]->trans);
-                 fscanf(fp, "%s", &p[i]->place);
-                 fscanf(fp, "%s", &p[i]->diary);
+                 fscanf(fp, "%s", p[i]->trans);
+                 fscanf(fp, "%s", p[i]->place);
+                 fscanf(fp, "%s", p[i]->diary);
                 }
     fclose(fp);
     printf("=> 로딩 성공!\n");

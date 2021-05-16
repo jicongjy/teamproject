@@ -5,11 +5,11 @@ int main(){
     int count=0;
     int choose;
     data *d[100];
-    count=loadData(d);
     //포인터에 공간 배정
     for(int i=0;i<100;i++){
         d[i]=malloc(sizeof(data));
     }
+    count=loadData(d);
     
     while(menu!=0){
         menu=SelectMenu();

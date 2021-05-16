@@ -22,5 +22,5 @@ int readPost(data d[]); //하나의 글 출력 함수
 int UpdatePost(data* d); //정보 수정하는 함수
 void Viewpoint(data *d);//포인트를 확인하는 함수
 void saveData(data *d[], int count);//파일저장함수
-int loadData(data **p);//파일로드함수
+int loadData(data* p[]);//파일로드함수
 void searchName(data* p[], int count);//검색하는 함수
