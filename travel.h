@@ -3,24 +3,24 @@
 #include <string.h>
 #include <stdbool.h>
 typedef struct {
-    char day[100];//ì—¬í–‰í•œ ë‚ ì§œ
-    int point;//í¬ì¸íŠ¸
-    int num;//ë³„ì 
-    char trans[100];//êµí†µìˆ˜ë‹¨
-    char place[100];//ì—¬í–‰ ì¥ì†Œ
-    char diary[100];//ê¸°ë¡í•  ë‚´ìš©
+    char day[100];//¿©ÇàÇÑ ³¯Â¥
+    int point;//Æ÷ÀÎÆ®
+    int num;//º°Á¡
+    char trans[100];//±³Åë¼ö´Ü
+    char place[100];//¿©Çà Àå¼Ò
+    char diary[100];//±â·ÏÇÒ ³»¿ë
 }data;
 
-int SelectMenu(); //ë©”ë‰´ë¥¼ ì„ íƒí•˜ëŠ” í•¨ìˆ˜
-int GetPoint(data *d, int po); //ê¸€ í•œê°œ ì‘ì„± ì‹œ í¬ì¸íŠ¸ë¥¼ ì§€ê¸‰
-int ManagePoint(); //í¬ì¸íŠ¸ë¥¼ ê´€ë¦¬í•˜ëŠ” í•¨ìˆ˜
-int DeletePost(data *d); //ê¸€ì„ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
-int CreatPost(data *d); //ê¸€ì„ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
-void listPost(data* d[],int count); //ë“±ë¡ëœ ê¸€ ëª©ë¡ ì¶œë ¥
-void listDetail(data d[]); //ì„¸ë¶€ì‚¬í•­ ì¶œë ¥
-int readPost(data d[]); //í•˜ë‚˜ì˜ ê¸€ ì¶œë ¥ í•¨ìˆ˜
-int UpdatePost(data* d); //ì •ë³´ ìˆ˜ì •í•˜ëŠ” í•¨ìˆ˜
-void Viewpoint(data *d);//í¬ì¸íŠ¸ë¥¼ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
-void saveData(data *d[], int count);//íŒŒì¼ì €ì¥í•¨ìˆ˜
-int loadData(data **p);//íŒŒì¼ë¡œë“œí•¨ìˆ˜
-void searchName(data **d, int count);//ê²€ìƒ‰í•˜ëŠ” í•¨ìˆ˜
+int SelectMenu(); //¸Ş´º¸¦ ¼±ÅÃÇÏ´Â ÇÔ¼ö
+int GetPoint(data *d, int po); //±Û ÇÑ°³ ÀÛ¼º ½Ã Æ÷ÀÎÆ®¸¦ Áö±Ş
+int ManagePoint(); //Æ÷ÀÎÆ®¸¦ °ü¸®ÇÏ´Â ÇÔ¼ö
+int DeletePost(data *d); //±ÛÀ» »èÁ¦ÇÏ´Â ÇÔ¼ö
+int CreatPost(data *d); //±ÛÀ» Ãß°¡ÇÏ´Â ÇÔ¼ö
+void listPost(data* d[],int count); //µî·ÏµÈ ±Û ¸ñ·Ï Ãâ·Â
+void listDetail(data d[]); //¼¼ºÎ»çÇ× Ãâ·Â
+int readPost(data d[]); //ÇÏ³ªÀÇ ±Û Ãâ·Â ÇÔ¼ö
+int UpdatePost(data* d); //Á¤º¸ ¼öÁ¤ÇÏ´Â ÇÔ¼ö
+void Viewpoint(data *d);//Æ÷ÀÎÆ®¸¦ È®ÀÎÇÏ´Â ÇÔ¼ö
+void saveData(data *d[], int count);//ÆÄÀÏÀúÀåÇÔ¼ö
+int loadData(data* p[]);//ÆÄÀÏ·ÎµåÇÔ¼ö
+void searchName(data* p[], int count);//°Ë»öÇÏ´Â ÇÔ¼ö
